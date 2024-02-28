@@ -1,11 +1,10 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+// /backend/index.js
+const database = require('./src/database');
+const app = require('./src/app');
+const { port } = require('./src/vars');
 
-app.get('/', (req, res) => {
-    console.log('Watchlist API');
-});
+database.connect();
 
 app.listen(port, () => {
-    console.log('App listening on port 3000');
+    console.log(`App listening on port ${port}`);
 });
